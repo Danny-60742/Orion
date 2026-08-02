@@ -1,5 +1,5 @@
+from Skills.worldclock import get_world_time,MULTI_ZONE_COUNTRIES
 from Skills.status import get_status
-from Skills.worldclock import get_world_time
 import os
 
 # Display Orion logo in rainbow colors
@@ -47,6 +47,7 @@ print(f"\nOrion: Nice to meet you, {name}!")
 print("Orion: How can I help you today?")
 
 waiting_for_country = False
+current_country = None
 while True:
     user_input = input(f"\n{name}: ").strip().lower()
 
@@ -54,14 +55,22 @@ while True:
                 print(f"Orion: Goodbye, {name}! Have a great day!")
                 break
     elif waiting_for_country:
-                print("Orion:", get_world_time(user_input))
-                waiting_for_country = False
+        if user_input in MULTI_ZONE_COUNTRIES[current_country]:
+            print("Orion:", get_world_time(user_input))
+            waiting_for_country = False
+            current_country = None
+        else:
+            print(f"Orion: {user_input.title()} isn't a city in {current_country.title()}.")
+            print("Orion: Please choose one of these:")
+            for city in MULTI_ZONE_COUNTRIES[current_country]:
+                print("-", city.title())
 
     elif "time in" in user_input:
                 place = user_input.split("time in", 1)[1].strip()
 
                 if place in ["usa", "canada", "australia"]:
                    waiting_for_country = True
+                   current_country = place
 
                 print("Orion:", get_world_time(place))
 

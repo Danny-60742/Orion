@@ -47,5 +47,5 @@ def get_world_time(place):
               zone = ZoneInfo(TIME_ZONES[place])
               current_time = datetime.now(zone)
               return f"The current time in {place.title()} is {current_time.strftime('%H:%M:%S')}"
-              
+         else:     
               return "Sorry, I don't know that location yet."
