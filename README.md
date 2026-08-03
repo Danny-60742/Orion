@@ -16,7 +16,6 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/Danny-60742/Orion.git
-cd Orion
 ```
 
 Install the Python dependencies:
