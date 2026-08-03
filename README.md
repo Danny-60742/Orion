@@ -10,19 +10,35 @@ Orion is a lightweight terminal assistant written in Python.
 - 🌍 World clock
 - 📊 Status command
 
-## Installation
+# Installation
 
 Clone the repository:
 
 ```bash
 git clone https://github.com/Danny-60742/Orion.git
+cd Orion
+```
+
+Install the Python dependencies:
+
+```bash
+pip install rich requests tzdata
+```
+
+(Optional) Install `figlet` and `lolcat` for the colored startup banner.
+
+Ubuntu/Debian:
+
+```bash
+sudo apt install figlet
+sudo gem install lolcat
 ```
 
 Run Orion:
 
 ```bash
 python main.py
-```
+
 
 ## Technologies
 
