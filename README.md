@@ -37,7 +37,7 @@ Run Orion:
 
 ```bash
 cd (directory containing Orion)
-```bash
+
 python main.py
 
 
