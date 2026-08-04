@@ -36,6 +36,8 @@ sudo gem install lolcat
 Run Orion:
 
 ```bash
+cd (directory containing Orion)
+```bash
 python main.py
 
 
